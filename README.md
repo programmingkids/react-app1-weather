@@ -43,4 +43,4 @@ Reactレベル6基礎修了
 * APIの利用
 * GitHubアカウントの作成
 * Netlityアカウント作成
-* Netligyへデプロイ
+* Netlifyへデプロイ
