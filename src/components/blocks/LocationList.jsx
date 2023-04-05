@@ -28,19 +28,7 @@ export const LocationList = ({handleClose}) => (
     bgcolor: 'background.paper' 
   }}>
     <List>
-      {cities.map((c,index) => (
-        <ListItem disablePadding key={index}>
-          <ListItemButton 
-            onClick={handleClose}
-            component={Link}
-            to={c.url}>
-            <ListItemIcon>
-              <LocationCityIcon />
-            </ListItemIcon>
-            <ListItemText primary={c.title} />
-          </ListItemButton>
-        </ListItem>
-      ))}
+
     </List>
   </Box>
 );
