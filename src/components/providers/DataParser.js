@@ -26,7 +26,7 @@ export const extractDataForWeatherBox = (data) => {
   const tempMin = Math.round(current.main.temp_min);
 
   // 降水
-  const rain = parseFloat(current.pop) * 100;
+  const rain = Math.round(parseFloat(current.pop) * 100);
   
   // 湿度
   const humid = current.main.humidity;
