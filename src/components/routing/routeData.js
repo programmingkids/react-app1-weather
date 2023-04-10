@@ -7,6 +7,7 @@ import { Nagoya } from './../pages/Nagoya';
 import { Hokkaido } from './../pages/Hokkaido';
 import { Tokyo } from './../pages/Tokyo';
 import { Search } from './../pages/Search';
+import { London } from './../pages/London';
 
 export const routeData = [
     {
@@ -40,6 +41,10 @@ export const routeData = [
             {
                 path: 'search',
                 element: <Search />,
+            },
+            {
+                path: 'london',
+                element: <London />,
             },
             {
                 path: '*',

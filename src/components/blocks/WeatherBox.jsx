@@ -12,6 +12,7 @@ const MyGrid = styled(Grid)(({theme}) => ({
 
 const MainPaper = styled(Paper)(({theme}) => ({
   borderRadius: theme.spacing(5),
+  marginBottom: theme.spacing(10),
   padding : theme.spacing(5),
   textAlign: 'center',
 }));
@@ -33,6 +34,7 @@ export const WeatherBox = ({data}) => {
   const { 
     city, iconURL, dateTimeString, description, 
     tempMax, tempMin, rain, humid, wind,
+    nextData,
   } = extractDataForWeatherBox(data);
   
   return (
@@ -63,6 +65,17 @@ export const WeatherBox = ({data}) => {
                 <Typography>風速</Typography>
                 <Typography>{wind}M</Typography>
               </Box>
+            </BottomStack>
+            <Divider sx={{m:4}}/>
+            <BottomStack direction="row">
+            {nextData.map(d => (
+              <Box>
+                <Typography>{d.dateTimeString}</Typography>
+                <img src={d.iconURL} />
+                <Typography>{d.pop}%</Typography>
+                <Typography>{d.temp}℃</Typography>
+              </Box>
+            ))}
             </BottomStack>
           </MainPaper>
         </Grid>
