@@ -1,25 +1,25 @@
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 
 const theme = createTheme({
-  palette : {
-    mode: 'light',
+  palette: {
+    mode: "light",
     background: {
-      default : '#ececec',
+      default: "#ececec",
     },
   },
-  typography : {
+  typography: {
     subtitle1: {
       fontSize: 20,
     },
     tempMax: {
       fontSize: 20,
-      color: 'red',
+      color: "red",
     },
     tempMin: {
       fontSize: 20,
-      color: 'blue',
+      color: "blue",
     },
-  }
+  },
 });
 
 export const AppTheme = (props) => (

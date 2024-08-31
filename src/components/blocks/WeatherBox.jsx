@@ -1,40 +1,54 @@
-import { styled } from '@mui/material/styles';
-import { Box, Stack, Button, Paper, Container, Typography, } from '@mui/material';
-import { Divider } from '@mui/material';
-import Grid from '@mui/material/Unstable_Grid2';
+import { styled } from "@mui/material/styles";
+import {
+  Box,
+  Stack,
+  Button,
+  Paper,
+  Container,
+  Typography,
+} from "@mui/material";
+import { Divider } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 
-import { extractDataForWeatherBox } from './../providers/DataParser';
+import { extractDataForWeatherBox } from "./../providers/DataParser";
 
-const MyGrid = styled(Grid)(({theme}) => ({
+const MyGrid = styled(Grid)(({ theme }) => ({
   marginTop: theme.spacing(2),
   marginBottom: theme.spacing(2),
 }));
 
-const MainPaper = styled(Paper)(({theme}) => ({
+const MainPaper = styled(Paper)(({ theme }) => ({
   borderRadius: theme.spacing(5),
-  padding : theme.spacing(5),
-  textAlign: 'center',
+  padding: theme.spacing(5),
+  textAlign: "center",
 }));
 
-const TempStack = styled(Stack)(({theme}) => ({
-  justifyContent: 'center',
+const TempStack = styled(Stack)(({ theme }) => ({
+  justifyContent: "center",
   gap: theme.spacing(5),
   marginTop: theme.spacing(1),
 }));
 
-const BottomStack = styled(Stack)(({theme}) => ({
-  justifyContent: 'center',
+const BottomStack = styled(Stack)(({ theme }) => ({
+  justifyContent: "center",
   gap: theme.spacing(5),
   marginTop: theme.spacing(2),
   marginBottom: theme.spacing(1),
 }));
 
-export const WeatherBox = ({data}) => {
-  const { 
-    city, iconURL, dateTimeString, description, 
-    tempMax, tempMin, rain, humid, wind,
+export const WeatherBox = ({ data }) => {
+  const {
+    city,
+    iconURL,
+    dateTimeString,
+    description,
+    tempMax,
+    tempMin,
+    rain,
+    humid,
+    wind,
   } = extractDataForWeatherBox(data);
-  
+
   return (
     <Container>
       <MyGrid container>
@@ -42,7 +56,7 @@ export const WeatherBox = ({data}) => {
           <MainPaper elevation={4}>
             <Typography variant="h5">{city.name}</Typography>
             <Typography variant="subtitle1">{dateTimeString}</Typography>
-            <img src={iconURL} width='30%' />
+            <img src={iconURL} width="30%" />
             <Typography variant="subtitle1">{description}</Typography>
             <TempStack direction="row">
               <Typography variant="tempMax">{tempMax}℃</Typography>
